@@ -1,22 +1,28 @@
 <template>
   <nav class="nav">
     <div class="logo"><img src="../assets/logo.jpg"></div>
-    <div class="el-menu-item" href="#">首页</div>
-    <div class="el-menu-item" href="#">资讯</div>
-    <div class="el-menu-item" href="#">视频</div>
-    <div class="el-menu-item" href="#">提问</div>
-    <div class="el-menu-item" link to="/comminicate">交流</div>
-    <div class="el-menu-item" href="#">直播</div>
-    <div class="el-menu-item" href="#">供求信息</div>
-    <div class="el-menu-item" href="#">知网书屋</div>
-
+    <div class="el-menu-item" @click="push('home')">首页</div>
+    <div class="el-menu-item" @click="push('news')">资讯</div>
+    <div class="el-menu-item" @click="push('video')">视频</div>
+    <div class="el-menu-item" @click="push('questions')">提问</div>
+    <div class="el-menu-item" @click="push('comminicate')">交流</div>
+    <div class="el-menu-item" @click="push('live')">直播</div>
+    <div class="el-menu-item" @click="push('message')">供求信息</div>
+    <div class="el-menu-item" @click="push('bookstore')">知网书屋</div>
   </nav>
 </template>
 <script>
 
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  methods: {
+    push (path) {
+      console.log(path)
+      this.$router.push('/' + path)
+    }
+  }
 }
+
 </script>
 
 <style lang="css">

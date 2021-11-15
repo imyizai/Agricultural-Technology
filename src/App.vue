@@ -2,6 +2,7 @@
  <div id="app">
    <header>
      <Navbar />
+     <router-view comminicate></router-view>
    </header>
  </div>
 </template>
@@ -28,6 +29,6 @@ export default {
   header {
     background: dimgrey;
     width: auto;
-    height: 80px;
+    height: 20px;
   }
 </style>

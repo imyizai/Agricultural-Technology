@@ -13,7 +13,7 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: 'comminicate',
+      path: '/comminicate',
       name: 'Comminicate',
       component: () => import(/* webpackChunkName: "comminicate" */ '../views/Comminicate.vue')
     }
