@@ -2,19 +2,16 @@
   <div>
     <!-- 图片主体区域 -->
     <div>
-      <ul>
         <!--  v-show="index===num" 只显示当前需要显示的图片，其他的都隐藏-->
-        <li
+        <div
           v-for="(imgUrl, index) in bannerList"
           :key="index"
-          style="float: left"
+          style="float: left; width:100%"
           v-show="index === num"
         >
-          <a href="#">
-            <img :src="imgUrl.src" style="width: 200px; height: 200px" />
-          </a>
-        </li>
-      </ul>
+            <img :src="imgUrl" class="img" />
+
+        </div>
     </div>
 
     <!-- 小圆圈 -->
@@ -29,11 +26,6 @@
       <!-- 可以把当前的index和当前的元素传给这个事件，然后对进行处理-->
     </div>
 
-    <!-- 左右箭头 -->
-    <div class="arrow">
-      <span class="arrow_left" @click="arrowLeft"> &lt; </span>
-      <span class="arrow_right" @click="arrowRight"> &gt; </span>
-    </div>
   </div>
 </template>
 <script>
@@ -97,3 +89,11 @@ export default {
   }
 }
 </script>
+<style scoped>
+
+.img{
+  width: 90%;
+  height: 240px ;
+  margin-left: 5%;
+}
+</style>
