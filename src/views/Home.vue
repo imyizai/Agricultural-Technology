@@ -1,19 +1,17 @@
 <template>
-  <div>
+  <div >
     <!-- 图片主体区域 -->
     <div>
         <!--  v-show="index===num" 只显示当前需要显示的图片，其他的都隐藏-->
         <div
           v-for="(imgUrl, index) in bannerList"
           :key="index"
-          style="float: left; width:100%"
+          style="float: left; width:100%; height:240px;margin-left:60px;margin-top:20px"
           v-show="index === num"
-        >
+>
             <img :src="imgUrl" class="img" />
-
         </div>
     </div>
-
     <!-- 小圆圈 -->
     <div class="bar">
       <span
@@ -25,7 +23,41 @@
       ></span>
       <!-- 可以把当前的index和当前的元素传给这个事件，然后对进行处理-->
     </div>
+    <div class="fontpage">
+      <div class="point">
+        <div>头条</div>
+      </div>
+      <div class="item">
+        <div class="item-cards">
+          <div class="item-card"></div>
+          <div class="item-card"></div>
+        </div>
+        <div class="item-cards">
+          <div class="item-card"></div>
+          <div class="item-card"></div>
+        </div>
+      </div>
+      <div>
+          <div class="more" @click="push('news')">查看更多</div>
+      </div>
+    </div>
+     <div class="fontpage">
+      <div class="point" style="background-color:#10d063 ;">
+        <div>提问</div>
+      </div>
 
+      <div>
+        <div class="more" @click="push('news')">查看更多</div>
+      </div>
+    </div>
+      <div class="fontpage">
+        <div class="point" style="background-color:#2790da ;">
+          <div>视频</div>
+        </div>
+      <div>
+          <div class="more" @click="push('news')">查看更多</div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -34,11 +66,12 @@ export default {
     num: 0,
     timer: null,
     bannerList: [
-      'http://first-bucket20201002.oss-cn-hangzhou.aliyuncs.com/img/img/picture/1.jpg',
-      'http://first-bucket20201002.oss-cn-hangzhou.aliyuncs.com/img/img/picture/10.jpg',
-      'http://first-bucket20201002.oss-cn-hangzhou.aliyuncs.com/img/img/picture/3.jpg',
-      'http://first-bucket20201002.oss-cn-hangzhou.aliyuncs.com/img/img/picture/2.jpg',
-      'http://first-bucket20201002.oss-cn-hangzhou.aliyuncs.com/img/img/picture/5.jpg'
+      'http://object.jsnjy.net.cn/OSS/20211111/37359cfc57834c7691e82fb93685bec9.jpg',
+      'http://object.jsnjy.net.cn/OSS/20211027/bff2415b71144909b3458ad0cd08e614.jpg',
+      'http://object.jsnjy.net.cn/OSS/20211112/99117716bc9643208cdceec67b5be572.jpg',
+      'http://object.jsnjy.net.cn/OSS/20211109/10b236b05f0b42dfb893076c5a3b9d83.jpg',
+      'http://object.jsnjy.net.cn/OSS/20211112/9e3e535de539461a95b78ee3a1762043.jpg'
+
     ] // 轮播图数组
   }),
   methods: {
@@ -90,10 +123,60 @@ export default {
 }
 </script>
 <style scoped>
-
 .img{
   width: 90%;
-  height: 240px ;
+  height: 260px ;
+
+}
+.fontpage{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 450px;
+}
+.point{
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background-color:#e85a00;
+  margin-top: 50px;
+  margin-left: 70px;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  color: #ffffff;
+}
+.item{
+  background-color: #ffffff ;
+  display: flex;
+  flex-direction: row;
   margin-left: 5%;
+  margin-top: -20px;
+  margin-left: 5%;
+  z-index: -1;
+  width: 90%;
+  height: 320px;
+}
+.item-cards{
+  background-color: #ffffff ;
+  width: 100%;
+  height: 50%;
+}
+.item-card{
+  background-color: #fafafa ;
+  margin-top:4% ;
+  margin-left: 5%;
+  width: 90%;
+  height: 80%;
+}
+.more{
+  background-color:  #ffffff;
+  width: 90%;
+  margin-left: 5%;
+  height: 40px;
+   display:flex;
+  justify-content:center;
+   align-items: center;
+   margin-top: 1.5px;
 }
 </style>
