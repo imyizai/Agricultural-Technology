@@ -15,32 +15,37 @@ export default new Router({
     {
       path: '/home',
       name: 'Home',
-      component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue')
+      component: () => import('../views/Home.vue')
     },
     {
       path: '/comminicate',
       name: 'Comminicate',
-      component: () => import(/* webpackChunkName: "comminicate" */ '../views/Comminicate.vue')
+      component: () => import('../views/Comminicate.vue')
     },
     {
-      path: '/video',
+      path: 'video',
       name: 'Video',
-      component: () => import(/* webpackChunkName: "video" */ '../views/Video.vue')
+      component: () => import('../views/Video.vue')
     },
     {
-      path: '/live',
+      path: 'live',
       name: 'Live',
-      component: () => import(/* webpackChunkName: "live" */ '../views/Live.vue')
+      component: () => import('../views/Live.vue')
     },
     {
       path: '/message',
       name: 'Message',
-      component: () => import(/* webpackChunkName: "message" */ '../views/Message.vue')
+      component: () => import('../views/Message.vue')
     },
     {
       path: '/news',
       name: 'News',
-      component: () => import(/* webpackChunkName: "news" */ '../views/News.vue')
+      component: () => import('../views/News.vue')
+    },
+    {
+      path: '/bookstore',
+      name: 'Bookstore',
+      component: () => import('../views/Bookstore.vue')
     }
   ]
 })

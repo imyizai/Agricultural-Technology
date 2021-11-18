@@ -47,7 +47,7 @@
       </div>
 
       <div>
-        <div class="more" @click="push('news')">查看更多</div>
+        <div class="more" @click="push('questions')">查看更多</div>
       </div>
     </div>
       <div class="fontpage">
@@ -55,7 +55,7 @@
           <div>视频</div>
         </div>
       <div>
-          <div class="more" @click="push('news')">查看更多</div>
+          <div class="more" @click="push('video')">查看更多</div>
       </div>
     </div>
   </div>
@@ -75,6 +75,12 @@ export default {
     ] // 轮播图数组
   }),
   methods: {
+
+    push (path) {
+      console.log(path)
+      this.$router.push('/' + path)
+    },
+
     // 自动轮播
     autoPlay () {
       this.num++
