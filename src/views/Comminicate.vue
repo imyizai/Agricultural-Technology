@@ -36,6 +36,21 @@
 <script>
 
 export default {
+  created () {
+    console.log('res')
+    this.axios({
+      method: 'POST',
+      url: '/faqs/communition/list',
+      data: {
+        'startIndex': 1,
+        'pageSize': 5,
+        'time': '1637024828196'
+      }
+    }).then(res => {
+      console.log('123')
+      console.log(res)
+    })
+  },
   data () {
     return {
       list: [
