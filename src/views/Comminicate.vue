@@ -2,7 +2,7 @@
   <div class="container">
   <div v-for="(item,index) in list" :key="index">
     <div class="main">
-      <el-card class="box-card" >
+      <el-card class="box-card">
       <div class="info">
           <el-avatar :size="size" :src="circleUrl"></el-avatar>
         <span class="name">{{item.name}}</span>
@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="img">
-      <img src="../assets/1.jpg" style="width: 100px; height: 100px">
+      <img src="../assets/1.jpg" @click="push('detail')" style="width: 100px; height: 100px">
       </div>
       </el-card>
     </div>
@@ -36,6 +36,27 @@
 <script>
 
 export default {
+  methods: {
+    push (path) {
+      console.log(path)
+      this.$router.push('/' + path)
+    }
+  },
+  created () {
+    console.log('res')
+    this.axios({
+      method: 'POST',
+      url: '/faqs/communition/list',
+      data: {
+        'startIndex': 1,
+        'pageSize': 5,
+        'time': '1637024828196'
+      }
+    }).then(res => {
+      console.log('123')
+      console.log(res)
+    })
+  },
   data () {
     return {
       list: [
@@ -133,9 +154,9 @@ export default {
     }
   },
   computed: {
-
   }
 }
+
 </script>
 <style lang="css">
 .name {
@@ -155,7 +176,7 @@ export default {
   font-size: 12px;
   position: relative;
 }
-.el-card{
+.box-card{
   width: 90%;
   height: 180px;
   margin-left: 85px;

@@ -46,6 +46,12 @@ export default new Router({
       path: '/bookstore',
       name: 'Bookstore',
       component: () => import('../views/Bookstore.vue')
+
+    },
+    {
+      path: '/detail',
+      name: 'Detail',
+      component: () => import('../views/Detail.vue')
     }
   ]
 })
