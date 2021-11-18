@@ -6,7 +6,7 @@
         <div
           v-for="(imgUrl, index) in bannerList"
           :key="index"
-          style="float: left; width:100%; height:240px;margin-left:60px;margin-top:20px"
+          style="float: left; width:100%; height:240px;margin-left:-60px;margin-top:20px"
           v-show="index === num"
 >
             <img :src="imgUrl" class="img" />
